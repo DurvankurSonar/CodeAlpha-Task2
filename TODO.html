@@ -1,0 +1,163 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      text-align: center;
+      background-color: rgb(49, 9, 57);
+      color: white;
+      padding: 5px;
+      font-size: 50px;
+      text-transform: uppercase;
+    }
+    
+    h2 {
+      font-size: 40px;
+      font-weight: 500;
+    }
+
+    label {
+      font-size: 30px;
+      display: block;
+      margin: 10px 0px;
+    }
+
+    .form-group {
+      margin: 15px 15px;
+	
+    }
+
+    input {
+      border: 1px solid black;
+      font-size: 20px;
+      padding: 10px 5px;
+      width: 20%;
+      border-radius: 5px;
+    }
+    #btn {
+      cursor: pointer;
+      color: white;
+      background: rgb(13, 110, 253);
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-family: sans-serif;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+    #btn:hover {
+      background-color: rgb(22, 22, 22);
+    }
+    hr {
+      width: 80%;
+      margin: 20px auto;
+      opacity: 0.5;
+    }
+    #contact 
+    {
+	
+        background-color: rgba(180, 169, 47, 0.69) ;
+      width: 30%;
+      height: 40%;
+      margin:  auto;
+      border: 2px solid rgb(77, 70, 159);
+      border-radius: 5px;
+      padding: 10px 80px 30px 10px;
+      box-sizing: content-box;
+      position: relative;
+      font-size: 20PX;
+    }
+
+  
+    #delete {
+      position: absolute;
+     top: 20px;
+      right: 20px;
+      white-space: pre-line; 
+      white-space: pre-line; 
+      padding: 5px;
+      background-color: whitesmoke;
+      border: 1px solid #430909;
+      color: #dc4545;
+      border-radius: 5px; 
+    }
+    #delete:hover {
+      background-color: #dc4545;
+      color: white;
+      cursor: pointer;
+    }
+  
+    </style>
+   
+    <title>To Do List</title>
+   
+  </head>
+  <body id="main">
+    <!-- Navbar -->
+    <nav>
+      <h1>To Do List</h1>
+    </nav>
+<!-- Addcontact -->
+    <div id="add">
+      
+      <!-- form -->
+      <form id="form">
+        <!-- Full Name -->
+        <center><div class="form-group">
+          <label for="name"></label>
+          <input type="text" id="name" name="name" placeholder="Write Something ..." required />
+		    <!-- Submit button -->
+        <button id="btn" type="submit"><h3>Add</h3></button>
+        </div></center>
+        
+      
+      </form>
+    </div>
+    <hr />
+   
+    <!-- Contact List -->
+    <div id="list"></div>
+    <script >
+        const btn = document.getElementById("btn");
+        const name = document.getElementById("name");
+        var number = document.getElementById("number");
+        var email = document.getElementById("email");
+        const contactList = document.getElementById("list");
+
+        btn.addEventListener("click", function (e)
+        {
+            e.preventDefault()
+            isValid = true;
+            if (isValid)
+            {
+                    createlist()
+                    name.value = "";
+                    
+                   
+            }
+
+        })
+        function createlist()
+        {
+            const plate = document.createElement("div");
+            plate.setAttribute("id", "contact");
+            plate.innerHTML = ` <p id="nameDisplay"> <h4>  ${name.value}</h4>
+            
+            <button id="delete" onclick="remove(this)">Delete</button></p>`
+            contactList.appendChild(plate);
+        }
+        function remove(contact)
+        {
+            var element = contact;
+            element.parentElement.remove()
+        }
+        
+        </script>
+  </body>
+</html>
