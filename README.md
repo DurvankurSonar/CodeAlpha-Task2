@@ -1,0 +1,1 @@
+Web scraping is the process of extracting data from websites. It involves fetching web pages, parsing the HTML or other structured data formats, and extracting the desired information. This data can then be saved locally, processed, or used for various purposes such as analysis, research, or integration into other systems.
